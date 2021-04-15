@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Расчет пропускной способности СПД</title>
+</head>
+
+<body>
+    <div class="navBar">
+        <img src="./img/logo.png" alt="" class="logo">
+        <div class="title"><h1>Расчет пропускной способности сети передачи данных</h1></div>
+    </div>
+
+    
+    <div class="options">
+        <div id="btnATSR" class="options-title" onclick="showWrap('ATSR')"><h1>АТС-Р</h1></div>
+        <div id="btnVKS" class="options-title options-title-active" onclick="showWrap('VKS')"><h1>ВКС</h1></div>
+        <div id="btnZSPD" class="options-title" onclick="showWrap('ZSPD')"><h1>ЗС СПД</h1></div>
+    </div>
+    
+    <div id="VKS" class="wrap">
+        <div class="calcContainer">
+            <div class="calcLine">
+                <span class="calcLine-title">Колличество абонентов</span>
+                <input class="calcLine-input" type="number" min="0" value="0" id="number-of-sub" onchange="VKScalc()">
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Качество видеосвязи</span>
+                <select class="calcLine-input" id="video-option" onchange="VKScalc()">
+                    <option value="64 128">SD(CIF 352x288)</option>
+                    <option value="128 256">SD(4CIF 704x576)</option>
+                    <option value="512 768">HD(720p 1280x720)</option>
+                    <option value="768 1229">HD(720p 1280x720)</option>
+                    <option value="1024 1536">Full HD(1080p 1920x1080)</option>
+                    <option value="2048 2560">Full HD(1080p 1920x1080)</option>
+                </select>
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Количество докладчиков</span>
+                <input class="calcLine-input" type="number" min="0" value="0" id="number-of-speakers" onchange="VKScalc()">
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Вывести ответ в</span>
+                <select class="calcLine-input" id="speed-type" onchange="VKScalc()">
+                    <option value="Кбит/с">Кбит/с</option>
+                    <option value="Мбит/с">Мбит/с</option>
+                </select>
+            </div>
+        </div>
+        
+        
+        
+        <div class="outputWrap">
+            <div>
+                <span class="outputTitle">Минимальная пропускная способность</span>
+                <span class="outputTitle" id="min-capacity">0</span>
+            </div>
+            <div>
+                <span class="outputTitle">Рекомендуемая пропускная способность</span>
+                <span class="outputTitle" id="recomend-capacity">0</span>
+            </div>
+        </div>
+    </div>
+    <div id="ATSR" class="wrap hideWrap">
+
+    </div>
+    <div id="ZSPD" class="wrap hideWrap">
+
+    </div>
+    <div class="btnWrap">
+        <button id="SaveBtn" class="btn">Сохранить результаты</button>
+    </div>
+</body>
+
+    <script src="./js/save.js" ></script>
+    <script src="./js/calc.js"></script>
+    <script>require('./render.js')</script>
+    <script src="./js/behavior.js"></script>
+
+</html>
