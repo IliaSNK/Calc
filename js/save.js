@@ -6,18 +6,35 @@ const save = () => {
     fName = fName.split(', ')
     fName[0] = fName[0].replaceAll('.', '_')
     let vks = `
-____________________${fName[1]}____________________
 
-                      ВКС
+Отчет от ${fName[0].replaceAll('_', '.')} в ${fName[1]}
 
-Количество абонентов:${document.getElementById('number-of-sub').value}
-Качество видеосвязи: ${document.getElementById('video-option').options[document.getElementById('video-option').selectedIndex].text}
-Количество докладчиков: ${document.getElementById('number-of-speakers').value}
+_____________________АТС-Р________________________
 
-Минимальная пропускная способность: ${document.getElementById('min-capacity').textContent}
-Рекомендуемая пропускная способность: ${document.getElementById('recomend-capacity').textContent}
+Количество абонентов:${document.getElementById('subATSR').value}
+Для стандарта: ${document.getElementById('standartATSR').options[document.getElementById('standartATSR').selectedIndex].text}
 
-________________________________________________
+Минимальная пропускная способность: ${document.getElementById('minATSR').textContent} ${document.getElementById('minATSRtype').textContent}
+Рекомендуемая пропускная способность: ${document.getElementById('recATSR').textContent} ${document.getElementById('recATSRtype').textContent}
+
+______________________ВКС_________________________
+
+Количество абонентов:${document.getElementById('subVKS').value}
+Качество видеосвязи: ${document.getElementById('optionVKS').options[document.getElementById('optionVKS').selectedIndex].text}
+Количество докладчиков: ${document.getElementById('speakVKS').value}
+
+Минимальная пропускная способность: ${document.getElementById('minVKS').textContent} ${document.getElementById('minVKStype').textContent}
+Рекомендуемая пропускная способность: ${document.getElementById('recVKS').textContent} ${document.getElementById('recVKStype').textContent}
+
+_____________________ЗС СПД_______________________
+
+Количество абонентов:${document.getElementById('subZSPD').value}
+Для стандарта: ${document.getElementById('categoryZSPD').options[document.getElementById('categoryZSPD').selectedIndex].text}
+
+Минимальная пропускная способность: ${document.getElementById('minZSPD').textContent} ${document.getElementById('minZSPDtype').textContent}
+Рекомендуемая пропускная способность: ${document.getElementById('recZSPD').textContent} ${document.getElementById('recZSPDtype').textContent}
+
+__________________________________________________
 `
     let file = remote.dialog.showSaveDialogSync({
             title: 'Save',

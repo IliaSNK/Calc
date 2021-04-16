@@ -11,9 +11,9 @@
     <div class="navBar">
         <img src="./img/logo.png" alt="" class="logo">
         <div class="title"><h1>Расчет пропускной способности сети передачи данных</h1></div>
+        <img src="./img/manual.png" alt="" class="logo manual" onclick="openManual()" title="Открыть справку">
     </div>
 
-    
     <div class="options">
         <div id="btnATSR" class="options-title" onclick="showWrap('ATSR')"><h1>АТС-Р</h1></div>
         <div id="btnVKS" class="options-title options-title-active" onclick="showWrap('VKS')"><h1>ВКС</h1></div>
@@ -24,11 +24,11 @@
         <div class="calcContainer">
             <div class="calcLine">
                 <span class="calcLine-title">Колличество абонентов</span>
-                <input class="calcLine-input" type="number" min="0" value="0" id="number-of-sub" onchange="VKScalc()">
+                <input class="calcLine-input" type="number" min="0" value="0" id="subVKS" onchange="VKScalc()">
             </div>
             <div class="calcLine">
                 <span class="calcLine-title">Качество видеосвязи</span>
-                <select class="calcLine-input" id="video-option" onchange="VKScalc()">
+                <select class="calcLine-input" id="optionVKS" onchange="VKScalc()">
                     <option value="64 128">SD(CIF 352x288)</option>
                     <option value="128 256">SD(4CIF 704x576)</option>
                     <option value="512 768">HD(720p 1280x720)</option>
@@ -39,44 +39,120 @@
             </div>
             <div class="calcLine">
                 <span class="calcLine-title">Количество докладчиков</span>
-                <input class="calcLine-input" type="number" min="0" value="0" id="number-of-speakers" onchange="VKScalc()">
+                <input class="calcLine-input" type="number" min="0" value="0" id="speakVKS" onchange="VKScalc()">
             </div>
             <div class="calcLine">
                 <span class="calcLine-title">Вывести ответ в</span>
-                <select class="calcLine-input" id="speed-type" onchange="VKScalc()">
+                <select class="calcLine-input" id="typeOfSpeedVKS" onchange="VKScalc()">
                     <option value="Кбит/с">Кбит/с</option>
                     <option value="Мбит/с">Мбит/с</option>
                 </select>
             </div>
         </div>
         
-        
-        
+        <div class="btnWrap" onclick="VKScalc()">
+            <button class="btn">Расчитать</button>
+        </div>
         <div class="outputWrap">
             <div>
                 <span class="outputTitle">Минимальная пропускная способность</span>
-                <span class="outputTitle" id="min-capacity">0</span>
+                <span class="outputTitle" id="minVKS">0.00</span>
+                <span class="outputTitle" id="minVKStype">Кбит/с</span>
             </div>
             <div>
                 <span class="outputTitle">Рекомендуемая пропускная способность</span>
-                <span class="outputTitle" id="recomend-capacity">0</span>
+                <span class="outputTitle" id="recVKS">0.00</span>
+                <span class="outputTitle" id="recVKStype">Мбит/с</span>
             </div>
         </div>
     </div>
     <div id="ATSR" class="wrap hideWrap">
-
+        <div class="calcContainer">
+            <div class="calcLine">
+                <span class="calcLine-title">Колличество абонентов</span>
+                <input class="calcLine-input" type="number" min="0" value="0" id="subATSR" onchange="ATSRcalc()">
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Для стандарта</span>
+                <select class="calcLine-input" id="standartATSR" onchange="ATSRcalc()">
+                    <option value="64">G.711</option>
+                    <option value="16">G.728</option>
+                    <option value="8">G.729</option>
+                </select>
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Вывести ответ в</span>
+                <select class="calcLine-input" id="typeOfSpeedATSR" onchange="ATSRcalc()">
+                    <option value="Кбит/с">Кбит/с</option>
+                    <option value="Мбит/с">Мбит/с</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="btnWrap">
+            <button class="btn" onclick="ATSRcalc()">Расчитать</button>
+        </div>
+        <div class="outputWrap">
+            <div>
+                <span class="outputTitle">Минимальная пропускная способность</span>
+                <span class="outputTitle" id="minATSR">0.00</span>
+                <span class="outputTitle" id="minATSRtype">Кбит/с</span>
+            </div>
+            <div>
+                <span class="outputTitle">Рекомендуемая пропускная способность</span>
+                <span class="outputTitle" id="recATSR">0.00</span>
+                <span class="outputTitle" id="recATSRtype">Кбит/с</span>
+            </div>
+        </div>
     </div>
     <div id="ZSPD" class="wrap hideWrap">
-
+        <div class="calcContainer">
+            <div class="calcLine">
+                <span class="calcLine-title">Колличество абонентов</span>
+                <input class="calcLine-input" type="number" min="0" value="0" id="subZSPD" onchange="ZSPDcalc()">
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Категории срочности</span>
+                <select class="calcLine-input" id="categoryZSPD" onchange="ZSPDcalc()">
+                    <option value="100 10">1 категория</option>
+                    <option value="2097152 60">2 категория</option>
+                    <option value="2097152 600">3 категория</option>
+                </select>
+            </div>
+            <div class="calcLine">
+                <span class="calcLine-title">Вывести ответ в</span>
+                <select class="calcLine-input" id="typeOfSpeedZSPD" onchange="ZSPDcalc()">
+                    <option value="Кбит/с">Кбит/с</option>
+                    <option value="Мбит/с">Мбит/с</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="btnWrap" onclick="ZSPDcalc()">
+            <button class="btn">Расчитать</button>
+        </div>
+        <div class="outputWrap">
+            <div>
+                <span class="outputTitle">Минимальная пропускная способность</span>
+                <span class="outputTitle" id="minZSPD">0.00</span>
+                <span class="outputTitle" id="minZSPDtype">Кбит/с</span>
+            </div>
+            <div>
+                <span class="outputTitle">Рекомендуемая пропускная способность</span>
+                <span class="outputTitle" id="recZSPD">0.00</span>
+                <span class="outputTitle" id="recZSPDtype">Кбит/с</span>
+            </div>
+        </div>
     </div>
     <div class="btnWrap">
         <button id="SaveBtn" class="btn">Сохранить результаты</button>
     </div>
 </body>
 
-    <script src="./js/save.js" ></script>
-    <script src="./js/calc.js"></script>
-    <script>require('./render.js')</script>
-    <script src="./js/behavior.js"></script>
+<script src="./js/save.js" ></script>
+<script src="./js/calc.js"></script>
+<script>require('./js/render.js')</script>
+<script src="./js/behavior.js"></script>
+<script src="./manual.js"></script>
 
 </html>
