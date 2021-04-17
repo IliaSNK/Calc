@@ -7,8 +7,10 @@ let win
 const openManual = () => {
     win = new BrowserWindow(
         {
-            width: 800, 
-            height: 600, 
+            width: 1280, 
+            height: 800, 
+            minWidth: 1000,
+            minHeight: 700,
             title: 'Справка',
             webPreferences: {
                 nodeIntegration: true,

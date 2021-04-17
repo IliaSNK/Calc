@@ -1,17 +1,25 @@
 {
-  "name": "fps_docks",
-  "version": "1.0.0",
+  "name": "bandwidth_calculation",
+  "version": "1.0.2",
+  "license": "ISC",
   "description": "",
+  "author": "Zubovich Nadejda",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist": "electron-builder -w --x64"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "electron": "^12.0.2"
-  }
-  
+    "electron": "latest",
+    "electron-builder": "^22.10.5",
+    "electron-packager": "latest"
+  },
+  "build": {
+    "appId": "bandwidth_calculation",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
+  "keywords": []
 }

@@ -14,8 +14,10 @@ let win
 function createWindow() {
     win = new BrowserWindow(
         {
-            width: 800, 
-            height: 600, 
+            width: 1280, 
+            height: 800, 
+            minWidth: 800,
+            minHeight: 700,
             title: 'Расчет пропускной способности СПД',
             webPreferences: {
                 nodeIntegration: true,
@@ -32,7 +34,7 @@ function createWindow() {
     }))
 
     //  Убрать при релизе
-     win.webContents.openDevTools()
+    //  win.webContents.openDevTools()
     win.on('closed', () =>{
         win = null
     })

@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Расчет пропускной способности СПД</title>
+    <title>Расчет требуемой пропускной способности мультисервисной сети</title>
 </head>
 
 <body>
     <div class="navBar">
         <img src="./img/logo.png" alt="" class="logo">
-        <div class="title"><h1>Расчет пропускной способности сети передачи данных</h1></div>
+        <div class="title"><h1>Расчет требуемой пропускной способности мультисервисной сети</h1></div>
         <img src="./img/manual.png" alt="" class="logo manual" onclick="openManual()" title="Открыть справку">
     </div>
 
     <div class="options">
         <div id="btnATSR" class="options-title" onclick="showWrap('ATSR')"><h1>АТС-Р</h1></div>
-        <div id="btnVKS" class="options-title options-title-active" onclick="showWrap('VKS')"><h1>ВКС</h1></div>
+        <div id="btnVKS" class="options-title options-title-active" onclick="showWrap('VKS')"><h1>ЗВКС</h1></div>
         <div id="btnZSPD" class="options-title" onclick="showWrap('ZSPD')"><h1>ЗС СПД</h1></div>
     </div>
     
@@ -29,12 +29,12 @@
             <div class="calcLine">
                 <span class="calcLine-title">Качество видеосвязи</span>
                 <select class="calcLine-input" id="optionVKS" onchange="VKScalc()">
-                    <option value="64 128">SD(CIF 352x288)</option>
-                    <option value="128 256">SD(4CIF 704x576)</option>
-                    <option value="512 768">HD(720p 1280x720)</option>
-                    <option value="768 1229">HD(720p 1280x720)</option>
-                    <option value="1024 1536">Full HD(1080p 1920x1080)</option>
-                    <option value="2048 2560">Full HD(1080p 1920x1080)</option>
+                    <option value="64 128">SD(CIF 352x288) 30к/с</option>
+                    <option value="128 256">SD(4CIF 704x576) 60к/с</option>
+                    <option value="512 768">HD(720p 1280x720) 30к/с</option>
+                    <option value="768 1229">HD(720p 1280x720) 60к/с</option>
+                    <option value="1024 1536">Full HD(1080p 1920x1080) 30к/с</option>
+                    <option value="2048 2560">Full HD(1080p 1920x1080) 60к/с</option>
                 </select>
             </div>
             <div class="calcLine">

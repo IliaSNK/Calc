@@ -17,7 +17,7 @@ _____________________АТС-Р________________________
 Минимальная пропускная способность: ${document.getElementById('minATSR').textContent} ${document.getElementById('minATSRtype').textContent}
 Рекомендуемая пропускная способность: ${document.getElementById('recATSR').textContent} ${document.getElementById('recATSRtype').textContent}
 
-______________________ВКС_________________________
+______________________ЗВКС________________________
 
 Количество абонентов:${document.getElementById('subVKS').value}
 Качество видеосвязи: ${document.getElementById('optionVKS').options[document.getElementById('optionVKS').selectedIndex].text}

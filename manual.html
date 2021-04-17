@@ -6,18 +6,158 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Справка</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/manual.css">
 </head>
 
 <body>
-    <br>
-    <h1>Справка</h1>
-    <div class="calcContainer">
-        Программное средство «Расчет требуемой пропускной способности мультисервисной сети» предназначено для расчета
-        минимальной и рекомендуемой пропускной способности мультисервисной сети для предоставления должностным лицам
-        услуг ЗВКС, ЗС СПД, АТС-Р требуемого качества с заданными вероятностно-временными характеристиками посредством
-        организации соответствующих служб в интересах обеспечения информационной работы ДЛ ОВУ и информационного
-        взаимодействия в мирное и военное время.
+    <div class="nav">
+        <h1>Справка</h1>
+    </div>
+    <div class="textContainer">
+        <h3>
+            О программе
+        </h3>
+        <h4>
+            <span class="tab"></span> Программное средство «Расчет требуемой пропускной способности мультисервисной
+            сети» предназначено для расчета
+            минимальной и рекомендуемой пропускной способности мультисервисной сети для предоставления должностным лицам
+            услуг ЗВКС, ЗС СПД, АТС-Р требуемого качества с заданными вероятностно-временными характеристиками
+            посредством
+            организации соответствующих служб в интересах обеспечения информационной работы ДЛ ОВУ и информационного
+            взаимодействия в мирное и военное время.
+        </h4>
+
+        <h2>Перейти в раздел:</h2>
+        <span class="tab"></span><a href="#ATSR">Расчет пропускной способности услуги АТС-Р</a><br>
+        <span class="tab"></span><a href="#ZVKS">Расчет пропускной способности услуги ЗВКС</a><br>
+        <span class="tab"></span><a href="#ZSPD" >Расчет пропускной способности услуги ЗС СПД</a><br>
+        <br>
+        
+        <a name="ATSR"></a>
+        <h3>
+            Расчет пропускной способности услуги АТС-Р
+        </h3>
+        <h4>
+            <span class="tab"></span> Для расчета пропускной способности введите предполагаемое количество абонентов АТС
+            и соответствующий аудиокодек:
+        </h4>
+        <h4>
+            <ul>
+                <li>G.711 64 кбит/с</li>
+                <li>G.728 16 кбит/с</li>
+                <li>G.729 8 кбит/с</li>
+            </ul>
+        </h4>
+        <img src="./img/ATSR.png" class="img"></img>
+        
+        <a name="ZVKS"></a>
+        <h3>
+            Расчет пропускной способности услуги ЗВКС
+        </h3>
+        <h4>
+            <span class="tab"></span>Для расчета пропускной способности сети введите количество участников конференции,
+            требуемое качество изображения: максимальное разрешение, количество кадров в секунду, количество
+            докладчиков( при наличии):
+        </h4>
+        <h2>Таблица характеристик видеопотока на одного корреспондента</h2>
+        <div class="table">
+            <div class="tableEl">Качество</div>
+            <div class="tableEl">Мин.пр.сп.</div>
+            <div class="tableEl">Рек.пр.сп.</div>
+            <div class="tableEl">Частота кадров</div>
+            <div class="tableEl">Стандартная четкость (SD) (CIF 352x288)</div>
+            <div class="tableEl">64 кбит/с</div>
+            <div class="tableEl">128 кбит/с</div>
+            <div class="tableEl">25–30 кадров/c</div>
+            <div class="tableEl">SD (4 CIF 704x576)</div>
+            <div class="tableEl">128 кбит/с</div>
+            <div class="tableEl">512 кбит/с</div>
+            <div class="tableEl">25–30 кадров/c</div>
+            <div class="tableEl">Высокая четкость (HD) (720p 1280x720)</div>
+            <div class="tableEl">512 кбит/с</div>
+            <div class="tableEl">768 кбит/с</div>
+            <div class="tableEl">25–30 кадров/c</div>
+            <div class="tableEl">HD (720p 1280x720)</div>
+            <div class="tableEl">768 кбит/с</div>
+            <div class="tableEl">1.1 Мбит/с</div>
+            <div class="tableEl">50–60 кадров/c</div>
+            <div class="tableEl">HD (1080p 1920x1080p)</div>
+            <div class="tableEl">1 Мбит/с</div>
+            <div class="tableEl">1.5 Мбит/с</div>
+            <div class="tableEl">25–30 кадров/c</div>
+            <div class="tableEl">HD (1080p 1920x1080p)</div>
+            <div class="tableEl">2 Мбит/с</div>
+            <div class="tableEl">3 Мбит/с</div>
+            <div class="tableEl">50–60 кадров/c</div>
+        </div>
+
+        <h2>Таблица характеристик видеопотока на одного докладчика</h2>
+        <div class="table">
+            <div class="tableEl">Качество</div>
+            <div class="tableEl">Мин.пр.сп.</div>
+            <div class="tableEl">Рек.пр.сп.</div>
+            <div class="tableEl">Частота кадров презентации</div>
+            <div class="tableEl">Стандартная четкость (SD) (CIF 352x288)</div>
+            <div class="tableEl">192 кбит/с</div>
+            <div class="tableEl">128 кбит/с</div>
+            <div class="tableEl">5-7 кадров/c</div>
+            <div class="tableEl">SD (4 CIF 704x576)</div>
+            <div class="tableEl">256 кбит/с</div>
+            <div class="tableEl">512 кбит/с</div>
+            <div class="tableEl">5-7 кадров/c</div>
+            <div class="tableEl">Высокая четкость (HD) (720p 1280x720)</div>
+            <div class="tableEl">768 кбит/с</div>
+            <div class="tableEl">768 кбит/с</div>
+            <div class="tableEl">10–15 кадров/c</div>
+            <div class="tableEl">HD (720p 1280x720)</div>
+            <div class="tableEl">1.1 Мбит/с</div>
+            <div class="tableEl">1.5 Мбит/с</div>
+            <div class="tableEl">10–15 кадров/c</div>
+            <div class="tableEl">HD (1080p 1920x1080p)</div>
+            <div class="tableEl">1.5 Мбит/с</div>
+            <div class="tableEl">2 Мбит/с</div>
+            <div class="tableEl">10–15 кадров/c</div>
+            <div class="tableEl">HD (1080p 1920x1080p)</div>
+            <div class="tableEl">2.5 Мбит/с</div>
+            <div class="tableEl">4 Мбит/с</div>
+            <div class="tableEl">25–30 кадров/c</div>
+        </div>
+        <img src="./img/ZVKS.png" class="img"></img>
+      
+        <a name="ZSPD"></a>
+        <h3>
+            Расчет пропускной способности услуги ЗС СПД
+        </h3>
+        <h4>
+            <span class="tab"></span>Для расчета пропускной способности сети введите предполагаемое количество
+            пользователей
+            услуги обмена электронной корреспонденцией, а также категорию срочности:
+        </h4>
+        <h4>
+            <ul>
+                <li>
+                    1 категория: максимальный размер сообщения до 100 байт,
+                    максимальный срок доставки 10сек
+                </li>
+                <li>
+                    2 категория: максимальный размер сообщения до 2048 кбайт,
+                    максимальный срок доставки до 1 мин
+                </li>
+                <li>
+                    3 категория: максимальный размер сообщения до 2048 кбайт,
+                    максимальный срок доставки до 10 мин
+                </li>
+            </ul>
+        </h4>
+        <img src="./img/ZSPD.png" class="img"></img>
+
+        
+
+
+    </div>
+
+    <div class="footer">
+        <span>Военная Академия связи 2021 год</span>
     </div>
 </body>
 
