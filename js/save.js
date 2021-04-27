@@ -1,12 +1,16 @@
+// Подключаем необходимые библиотеки для работы с файловой системой и библиотекой  Electron
 const remote = require('electron').remote
 const fs = require('fs')
 
+// Функция для сохранения лог-файла
 const save = () => {  
+    // Из текущей даты и времени формируем имя файла
     let fName = new Date().toLocaleString()
     fName = fName.split(', ')
     fName[0] = fName[0].replaceAll('.', '_')
+    
+    //Шаблон для лог-файла
     let vks = `
-
 Отчет от ${fName[0].replaceAll('_', '.')} в ${fName[1]}
 
 _____________________АТС-Р________________________
@@ -36,6 +40,7 @@ _____________________ЗС СПД_______________________
 
 __________________________________________________
 `
+    // Открываем диалоговое окно для выбора места сохранения лог-файла
     let file = remote.dialog.showSaveDialogSync({
             title: 'Save',
             filters: [{name: 'TestFile', extension: '.txt'}],
@@ -48,7 +53,7 @@ __________________________________________________
 }
                         
                     
-                   
+// Добавляем прослушивание события нажатия на кнопу "Сохранить"                 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('SaveBtn').addEventListener('click', () => save())
 })
